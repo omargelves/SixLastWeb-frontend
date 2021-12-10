@@ -8,8 +8,9 @@ import {
 } from "@apollo/client";
 import Proyectos from './components/Proyectos';
 import CrearProyecto from './components/CrearProyecto';
+import Usuarios from './components/Usuarios';
+//import CrearUsuario from './components/CrearUsuario';
 
-//import gestionUsuario from './ components/tabla';
 
 const client = new ApolloClient({
   uri: 'http://localhost:9092/graphql',
@@ -23,4 +24,5 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Proyectos />
     <CrearProyecto />
+    <Usuarios />
     </ApolloProvider>, inicio)

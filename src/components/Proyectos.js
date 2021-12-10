@@ -26,8 +26,8 @@ const Proyectos = () => {
       <tbody>
 
       <tr>
-        <td>{lider}</td>
         <td>{nombre}</td>
+        <td>{lider}</td>
         <td>{presupuesto}</td>
         <td>{estado}</td>
         <td>{fase}</td>
@@ -40,11 +40,11 @@ const Proyectos = () => {
   return (
     <table border="1">
       
-      <caption><h2>LISTADO DE PROYECTOS</h2></caption>
+      <caption><h1>Listado de proyectos</h1></caption>
     <thead>
-      <tr>
-        <th>Lider</th>
+        <tr>
         <th>Nombre Proyecto</th>
+        <th>Lider</th>
         <th>Presupuesto</th>
         <th>Estado</th>
         <th>Fase</th>

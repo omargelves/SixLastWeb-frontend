@@ -31,23 +31,23 @@ const CrearProyecto = () => {
             }})
         }} >
             <div>
-                <label>Nombre Proyecto</label>
+                <label>Nombre Proyecto </label>
                 <input ref={nombre => project.nombreProyecto = nombre} placeholder="Nombre" />
             </div>
             <div>
-                <label>Descripcion</label>
+                <label>Descripcion </label>
                 <input ref={descripcion => project.descripcion = descripcion} placeholder="Descripcion" />
             </div>
             <div>
-                <label>Objetivos</label>
+                <label>Objetivos </label>
                 <input ref={objetivos => project.objetivos = objetivos} placeholder="Objetivos" />
             </div>
             <div>
-                <label>Lider</label>
+                <label>Lider </label>
                 <input ref={lider => project.lider = lider} placeholder="Lider" />
             </div>
             <div>
-                <label>Presupuesto</label>
+                <label>Presupuesto </label>
                 <input ref={presupuesto => project.presupuesto = presupuesto} placeholder="Presupuesto" />
             </div>
             <div><button type="submit">Registrar Proyecto</button></div>
