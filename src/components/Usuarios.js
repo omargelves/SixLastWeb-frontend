@@ -9,13 +9,8 @@ const Usuarios = () => {
 `;
     const { loading, error, data } = useQuery(USUARIOS)
     if (loading) return "<h1>Cargando</h1>"
-
-
     const datosTabla = data.usuarios.map(({ nombre, identificacion, correo, tipoUsuario, estado }) => (
-
-
         <tbody>
-
             <tr>
                 <td>{nombre}</td>
                 <td>{identificacion}</td>
@@ -28,9 +23,8 @@ const Usuarios = () => {
     ));
 
     return (
-        <table border="1">
-
-            <caption><h1>Listado de usuarios</h1></caption>
+        <div><center><h1>Listado de usuarios</h1></center>
+        <table className="table table-success table-stripede">          
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -42,7 +36,7 @@ const Usuarios = () => {
             </thead>
 
             {datosTabla}
-        </table>
+            </table></div>
     )
 }
 

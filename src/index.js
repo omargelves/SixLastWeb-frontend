@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,7 +10,7 @@ import {
 import Proyectos from './components/Proyectos';
 import CrearProyecto from './components/CrearProyecto';
 import Usuarios from './components/Usuarios';
-//import CrearUsuario from './components/CrearUsuario';
+import CrearUsuario from './components/CrearUsuario';
 
 
 const client = new ApolloClient({
@@ -25,4 +26,5 @@ ReactDOM.render(
     <Proyectos />
     <CrearProyecto />
     <Usuarios />
+    <CrearUsuario />
     </ApolloProvider>, inicio)

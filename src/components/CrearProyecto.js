@@ -19,8 +19,8 @@ const CrearProyecto = () => {
         presupuesto: 0,
     }
 
-    return (<div><h1>Crear Proyecto</h1>
-        <form onSubmit={e => {
+    return (<div ><h1>Crear Proyecto</h1>
+        <form  onSubmit={e => {
             e.preventDefault();
             creadorDeProyecto({variables:{
                 descripcion: project.descripcion.value,
@@ -50,7 +50,7 @@ const CrearProyecto = () => {
                 <label>Presupuesto </label>
                 <input ref={presupuesto => project.presupuesto = presupuesto} placeholder="Presupuesto" />
             </div>
-            <div><button type="submit">Registrar Proyecto</button></div>
+            <div><button className="btn btn-primary" type="submit">Registrar Proyecto</button></div>
         </form>
     </div>)
 }

@@ -2,6 +2,9 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
+import { useState } from "react";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Proyectos = () => {
   const PROYECTOS = gql`
@@ -16,6 +19,11 @@ const Proyectos = () => {
     }
   }
 `;
+  const [autenticado,setAutenticado]=useState("NO")
+    const autenticar = () => {
+    setAutenticado("SI")
+  }
+
   const { loading, error, data } = useQuery(PROYECTOS)
   if (loading) return "<h1>Cargando</h1>"
       
@@ -38,10 +46,12 @@ const Proyectos = () => {
   ));
 
   return (
-    <table border="1">
+    <div><center><h1>Listado de proyectos</h1></center>
+    <table className="table table-success table-stripede" >
       
-      <caption><h1>Listado de proyectos</h1></caption>
-    <thead>
+      
+      
+        <thead >
         <tr>
         <th>Nombre Proyecto</th>
         <th>Lider</th>
@@ -52,8 +62,9 @@ const Proyectos = () => {
       </tr>
     </thead>
 
-    {datosTabla}
-  </table>
+        {datosTabla}
+       
+      </table><button onClick={autenticar}>Autenticar</button>valor:{autenticado}</div>
 )}
 
 export default Proyectos
