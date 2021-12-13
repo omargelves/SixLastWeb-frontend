@@ -2,6 +2,7 @@ import {
     gql, useMutation
 } from "@apollo/client";
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MUTATION_PROYECTO = gql`
     mutation creeProyecto($objGe:String,$presupuesto:Int, $nombreProyecto: String, $lider:String, $descripcion:String){
@@ -10,7 +11,14 @@ const MUTATION_PROYECTO = gql`
 `;
 
 const CrearProyecto = () => {
-    const [creadorDeProyecto] = useMutation(MUTATION_PROYECTO)
+    const [creadorDeProyecto] = useMutation(MUTATION_PROYECTO, {
+        context: {
+            headers: {
+                Authotizaction:123
+            }
+        }
+    })
+        
     let project = {
         nombreProyecto: "",
         descripcion: "",
@@ -30,27 +38,27 @@ const CrearProyecto = () => {
                 lider: project.lider.value
             }})
         }} >
-            <div>
-                <label>Nombre Proyecto </label>
+                <div className="mb-3">
+                <label >Nombre Proyecto: </label>
                 <input ref={nombre => project.nombreProyecto = nombre} placeholder="Nombre" />
             </div>
-            <div>
-                <label>Descripcion </label>
+            <div className="mb-3">
+                <label >Descripcion: </label>
                 <input ref={descripcion => project.descripcion = descripcion} placeholder="Descripcion" />
             </div>
-            <div>
-                <label>Objetivos </label>
+            <div className="mb-3">
+                <label>Objetivos: </label>
                 <input ref={objetivos => project.objetivos = objetivos} placeholder="Objetivos" />
             </div>
-            <div>
-                <label>Lider </label>
+            <div className="mb-3">
+                <label>Lider: </label>
                 <input ref={lider => project.lider = lider} placeholder="Lider" />
             </div>
-            <div>
-                <label>Presupuesto </label>
+            <div className="mb-3">
+                <label>Presupuesto: </label>
                 <input ref={presupuesto => project.presupuesto = presupuesto} placeholder="Presupuesto" />
             </div>
-            <div><button className="btn btn-primary" type="submit">Registrar Proyecto</button></div>
+            <div className="mb-3"><button className="btn btn-success" type="submit">Registrar Proyecto</button></div>
         </form>
     </div>)
 }

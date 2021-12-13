@@ -9,7 +9,7 @@ import {
 } from "@apollo/client";
 import Proyectos from './components/Proyectos';
 import CrearProyecto from './components/CrearProyecto';
-import Usuarios from './components/Usuarios';
+import ListaUsuarios from './components/ListaUsuarios';
 import CrearUsuario from './components/CrearUsuario';
 
 
@@ -25,6 +25,6 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Proyectos />
     <CrearProyecto />
-    <Usuarios />
+    <ListaUsuarios />   
     <CrearUsuario />
     </ApolloProvider>, inicio)

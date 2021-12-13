@@ -23,7 +23,7 @@ const Usuarios = () => {
     ));
 
     return (
-        <div><center><h1>Listado de usuarios</h1></center>
+        <div><br /><center><h1>Listado de usuarios</h1></center>
         <table className="table table-success table-stripede">          
             <thead>
                 <tr>

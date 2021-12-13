@@ -40,27 +40,29 @@ const CrearUsuario = () => {
                 }
             })
         }} >
-            <div>
+            <div className="mb-3">
                 <label>Nombre</label>
                 <input ref={nombre => user.nombre= nombre} placeholder="Nombre" />
             </div>
-            <div>
+            <div className="mb-3">
                 <label>correo </label>
-                <input ref={correo => user.correo = correo} placeholder="correo" />
+                <input ref={correo => user.correo = correo}    placeholder="correo" />
             </div>
-            <div>
+            <div className="mb-3">
                 <label>identificacion </label>
                 <input ref={identificacion => user.identificacion = identificacion} placeholder="identificacion" />
             </div>
-            <div>
+            <div className="mb-3">
                 <label>tipoUsuario </label>
-                <input ref={tipoUsuario => user.lider = tipoUsuario} placeholder="tipoUsuario" />
+                
+                <input  ref={tipoUsuario => user.tipoUsuario = tipoUsuario} placeholder="tipoUsuario" />
+                
             </div>
-            <div>
+            <div className="mb-3">
                 <label>clave </label>
                 <input ref={clave => user.clave = clave} placeholder="clave" />
-            </div>
-            <div><button type="submit">Registrar Usuario</button></div>
+            </div >
+            <div className="mb-3"><button className="btn btn-success"  type="submit">Registrar Usuario</button></div>
         </form>
     </div>)
 }
