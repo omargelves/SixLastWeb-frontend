@@ -52,7 +52,8 @@ const Proyectos = () => {
   ));
 
   return (
-    <div><center><h1>Listado de proyectos</h1></center>
+    <div>
+      <a href="/" class="link">Menu</a><center><h1>Listado de proyectos</h1></center>
       <table className="table table-success table-stripede" >
       
       
@@ -72,6 +73,7 @@ const Proyectos = () => {
        
       </table>
       {/*} <button onClick={autenticar}>Autenticar</button>valor:{autenticado}*/}
+      
     </div>
 )}
 

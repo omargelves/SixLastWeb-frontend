@@ -23,7 +23,8 @@ const Usuarios = () => {
     ));
 
     return (
-        <div><br /><center><h1>Listado de usuarios</h1></center>
+        <div><a href="/" class="link">Menu</a>
+            <br /><center><h1>Listado de usuarios</h1></center>
         <table className="table table-success table-stripede">          
             <thead>
                 <tr>
@@ -34,10 +35,11 @@ const Usuarios = () => {
                     <th>Estado</th>
                 </tr>
             </thead>
-
+                
             {datosTabla}
             </table></div>
-    )
+        
+    ) 
 }
 
 export default Usuarios

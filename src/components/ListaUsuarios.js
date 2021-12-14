@@ -20,7 +20,8 @@ const ListaUsuarios = () => {
         </div>
     }
     return (
-        <div><br /><center><h1>Listado de usuarios</h1></center>
+        <div><a href="/" class="link">Menu</a>
+            <br /><center><h1>Listado de usuarios</h1></center>
             <table className="table table-success table-stripede">
                 <thead>
                     <tr>
@@ -29,13 +30,13 @@ const ListaUsuarios = () => {
                         <th>Correo</th>
                         <th>Tipo de usuario</th>
                         <th>Estado</th>
-                        <th>Accion</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     {data.usuarios.map((usuario) => <Usuario user={usuario} />
                     )}
                 </thead>
-
-               
+                
             </table></div>
     )
 }

@@ -32,9 +32,11 @@ const Usuario = ({ user }) => {
         <td>{user.correo}</td>
         <td>{user.tipoUsuario}</td>
 
-        <td><button className="btn btn-success" onClick={activarUser}>Activar</button>
-            <button className="btn btn-danger" onClick={eliminarUser}>Eliminar</button></td>
+        <td><button className="btn btn-success" onClick={activarUser}>Activar</button></td>
+        <td><button className="btn btn-danger" onClick={eliminarUser}>Eliminar</button></td>
     </tr>
+        
+    
 }
 
 export default Usuario

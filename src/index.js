@@ -6,12 +6,17 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
+  ApolloLink,
+  HttpLink,
 } from "@apollo/client";
 import Proyectos from './components/Proyectos';
 import CrearProyecto from './components/CrearProyecto';
-import ListaUsuarios from './components/ListaUsuarios';
+import ActivarUsuario from './components/ListaUsuarios';
+import ListaUsuarios from './components/Usuarios';
 import CrearUsuario from './components/CrearUsuario';
-
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import MenuPrincipal from './components/Menu';
+import EditarProyecto from './components/EditarProyecto';
 
 const client = new ApolloClient({
   uri: 'http://localhost:9092/graphql',
@@ -23,8 +28,17 @@ const client = new ApolloClient({
 const inicio = document.getElementById("root")
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Proyectos />
-    <CrearProyecto />
-    <ListaUsuarios />   
-    <CrearUsuario />
-    </ApolloProvider>, inicio)
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={MenuPrincipal} />
+        <Route exact path="/usuario" component={ActivarUsuario} />
+        <Route exact path="/usuarios" component={ListaUsuarios} />
+        <Route exact path="/proyecto" component={CrearProyecto} />
+        <Route exact path="/usuario/crear" component={CrearUsuario} />
+        <Route exact path="/proyecto/listar" component={Proyectos} />
+        <Route exact path="/proyecto/:idProyecto" component={EditarProyecto} />
+        </Switch>  
+      
+    </BrowserRouter > 
+  </ApolloProvider>, inicio)
+    
