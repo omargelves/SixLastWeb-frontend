@@ -27,7 +27,7 @@ const CrearUsuario = () => {
         clave: "",
     }
 
-    return (<div><a href="/" class="link">Menu</a>
+    return (<div className="p-3 mb-2 bg-info text-dark"><div><a href="/menu" class="link">Menu</a>
         <h1>Crear Usuario</h1>
         <form onSubmit={e => {
             e.preventDefault();
@@ -67,7 +67,7 @@ const CrearUsuario = () => {
             
         </form>
         <a href="/usuarios" class="btn btn-primary">Lista de usuarios</a>
-    </div>)
+    </div></div>)
 }
 
 export default CrearUsuario

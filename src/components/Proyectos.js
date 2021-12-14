@@ -53,7 +53,7 @@ const Proyectos = () => {
 
   return (
     <div>
-      <a href="/" class="link">Menu</a><center><h1>Listado de proyectos</h1></center>
+      <a href="/menu" class="link">Menu</a><center><h1>Listado de proyectos</h1></center>
       <table className="table table-success table-stripede" >
       
       

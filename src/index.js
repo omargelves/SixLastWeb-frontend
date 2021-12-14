@@ -16,6 +16,7 @@ import ListaUsuarios from './components/Usuarios';
 import CrearUsuario from './components/CrearUsuario';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MenuPrincipal from './components/Menu';
+import Login from './components/Autenticar';
 import EditarProyecto from './components/EditarProyecto';
 
 const client = new ApolloClient({
@@ -30,7 +31,8 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={MenuPrincipal} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/menu" component={MenuPrincipal} />
         <Route exact path="/usuario" component={ActivarUsuario} />
         <Route exact path="/usuarios" component={ListaUsuarios} />
         <Route exact path="/proyecto" component={CrearProyecto} />

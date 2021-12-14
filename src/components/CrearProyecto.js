@@ -27,7 +27,7 @@ const CrearProyecto = () => {
         presupuesto: 0,
     }
 
-    return (<div ><a href="/" class="link">Menu</a>
+    return <div className="p-3 mb-2 bg-info text-dark"><div ><a href="/menu" class="link">Menu</a>
         <h1>Crear Proyecto</h1>
         <form  onSubmit={e => {
             e.preventDefault();
@@ -63,9 +63,9 @@ const CrearProyecto = () => {
             
             <a href="/proyecto/listar" class="btn btn-primary">Lista de proyectos</a>
         </form>
-    </div>
+    </div></div>
    
-    )
+    
 }
 
 export default CrearProyecto

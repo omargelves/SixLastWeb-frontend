@@ -3,7 +3,8 @@ import { Link } from "react-router-dom"
 
 const MenuPrincipal = () => {
     
-    return <ul class="nav justify-content-center">
+    return <div class="p-3 mb-2 bg-light text-dark"><center><h1>Proyectos de investigacion</h1></center><br></br>
+        <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link"><Link to="/proyecto/listar">Ver Proyectos</Link></a>
         </li>
@@ -20,7 +21,7 @@ const MenuPrincipal = () => {
             <a class="nav-link"><Link to="usuario">Activar o Eliminar Usuario</Link></a>
         </li>
         
-    </ul>
+    </ul></div>
 }
 
 export default MenuPrincipal

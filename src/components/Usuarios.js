@@ -23,7 +23,7 @@ const Usuarios = () => {
     ));
 
     return (
-        <div><a href="/" class="link">Menu</a>
+        <div><a href="/menu" class="link">Menu</a>
             <br /><center><h1>Listado de usuarios</h1></center>
         <table className="table table-success table-stripede">          
             <thead>
