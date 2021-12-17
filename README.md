@@ -1,3 +1,3 @@
-# SixLastWeb-FRontend
+# SixLastWeb-Frontend
 
 npm i
