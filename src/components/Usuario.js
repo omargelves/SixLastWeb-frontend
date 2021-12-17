@@ -8,6 +8,7 @@ const Usuario = ({ user }) => {
             activeUser(identificacion:$identificacion)
         }
     `
+    
     const ELIMINAR_USUARIO = gql`
         mutation deleteUser($ident:Int){
             deleteUser(ident:$ident)

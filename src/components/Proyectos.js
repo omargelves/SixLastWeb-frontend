@@ -2,8 +2,7 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
-import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 
 const Proyectos = () => {
@@ -16,36 +15,35 @@ const Proyectos = () => {
       estado
       fase
       descripcion
+      _id
     }
   }
 `;
-  const [autenticado, setAutenticado] = useState("NO")
-  const autenticar = () => {
-    setAutenticado("SI")
-  }
+  
 
   const { loading, error, data } = useQuery(PROYECTOS, {
     context: {
       header: {
-        Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJMaWRlciIsImlhdCI6MTYzOTM0MDM4NiwiZXhwIjoxNjM5MzQ3NTg2fQ.0HRKcftgu3Uc9T-ZyWK_sunlH8aV4A9-kDB_4q3aD9Y"
+        Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2wiOiJMaWRlciIsImlhdCI6MTYzOTYyNzk1NywiZXhwIjoxNjM5NjM1MTU3fQ.bZqZFLOvrQvc8Ikt0I12eCBqkkQ-oqD4RlDrml2eZnE"
       }
     }
   })
   if (loading) return "<h1>Cargando</h1>"
   if (error) return "<h1>Problemas con el server de graphql</h1>"
 
-  const datosTabla = data.proyectos.map(({ lider, nombre, presupuesto, estado, fase, descripcion }) => (
+  const datosTabla = data.proyectos.map(({ lider, nombre, presupuesto, estado, fase, descripcion,_id }) => (
     
       
     <tbody>
 
-      <tr>
+      <tr key={nombre}>
         <td>{nombre}</td>
         <td>{lider}</td>
         <td>{presupuesto}</td>
         <td>{estado}</td>
         <td>{fase}</td>
         <td>{descripcion}</td>
+        <td><Link to={`/proyecto/${nombre}`}>editar</Link> </td>
       </tr>
     </tbody>
     
@@ -53,11 +51,9 @@ const Proyectos = () => {
 
   return (
     <div>
-      <a href="/menu" class="link">Menu</a><center><h1>Listado de proyectos</h1></center>
-      <table className="table table-success table-stripede" >
-      
-      
-      
+      <a href="/menu" className="link">Menu</a><center><h1>Listado de proyectos</h1></center>
+
+      <table className="table table-success table-stripede" >    
         <thead >
           <tr>
             <th>Nombre Proyecto</th>
@@ -66,6 +62,7 @@ const Proyectos = () => {
             <th>Estado</th>
             <th>Fase</th>
             <th>Descripcion</th>
+            <th>Editar</th>
           </tr>
         </thead>
 

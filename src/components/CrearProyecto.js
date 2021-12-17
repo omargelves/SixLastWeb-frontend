@@ -11,14 +11,7 @@ const MUTATION_PROYECTO = gql`
 `;
 
 const CrearProyecto = () => {
-    const [creadorDeProyecto] = useMutation(MUTATION_PROYECTO, {
-        context: {
-            headers: {
-                Authotizaction:123
-            }
-        }
-    })
-        
+    const [creadorDeProyecto] = useMutation(MUTATION_PROYECTO)
     let project = {
         nombreProyecto: "",
         descripcion: "",

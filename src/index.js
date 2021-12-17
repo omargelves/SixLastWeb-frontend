@@ -19,8 +19,20 @@ import MenuPrincipal from './components/Menu';
 import Login from './components/Autenticar';
 import EditarProyecto from './components/EditarProyecto';
 
+const httpLink = new HttpLink({ uri: 'http://localhost:9092/graphql' });
+
+const authLink = new ApolloLink((operation, forward) => {
+  const token = localStorage.getItem('auth_token');
+  operation.setContext({
+    headers: {
+      authorization: token ? `${token}` : ''
+    }
+  });
+  return forward(operation);
+});
+
 const client = new ApolloClient({
-  uri: 'http://localhost:9092/graphql',
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 });
 
@@ -39,7 +51,7 @@ ReactDOM.render(
         <Route exact path="/usuario/crear" component={CrearUsuario} />
         <Route exact path="/proyecto/listar" component={Proyectos} />
         <Route exact path="/proyecto/:idProyecto" component={EditarProyecto} />
-        </Switch>  
+      </Switch>  
       
     </BrowserRouter > 
   </ApolloProvider>, inicio)

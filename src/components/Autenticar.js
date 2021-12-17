@@ -10,10 +10,7 @@ const Login = () => {
     const [pass, setPass] = useState("")
     const AUTENTICAR_USUARIO = gql`
         mutation autenticar($usuario:String,$clave:String){
-            autenticar(usuario:$usuario,clave:$clave){
-                status
-                jwt
-            }
+            autenticar(usuario:$usuario,clave:$clave)
         }
     `
     const changeClave = (e) => {
@@ -31,6 +28,7 @@ const Login = () => {
             }
         })
         if (autenticar.status != 200) {
+            
             alert("Usuario y/o contrasena invalida")
         } else {
             localStorage.setItem('auth_token', autenticar.jwt)
