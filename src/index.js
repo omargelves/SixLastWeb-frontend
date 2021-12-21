@@ -19,7 +19,8 @@ import MenuPrincipal from './components/Menu';
 import Login from './components/Autenticar';
 import EditarProyecto from './components/EditarProyecto';
 
-const httpLink = new HttpLink({ uri: 'http://localhost:9092/graphql' });
+//const httpLink = new HttpLink({ uri: 'http://localhost:9092/graphql' });
+const httpLink = new HttpLink({ uri: 'https://obscure-ocean-12386.herokuapp.com/' });
 
 const authLink = new ApolloLink((operation, forward) => {
   const token = localStorage.getItem('auth_token');
